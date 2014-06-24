@@ -2,6 +2,7 @@
 layout: docs
 title: Delete
 docs: Management
+order: 2
 ---
 
 If you would like to completely remove a stream, visit `{YOUR_SERVER}/streams/delete` and fill in the form with

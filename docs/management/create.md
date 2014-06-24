@@ -2,6 +2,7 @@
 layout: docs
 title: Create
 docs: Management
+order: 1
 ---
 
 To create a data stream, you will need to provide a `title`, `description`, `tags`, and `fields`.  You will
