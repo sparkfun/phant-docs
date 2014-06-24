@@ -17,5 +17,5 @@ Phant is the open source software behind [data.sparkfun.com](https://data.sparkf
 and it is actively maintained by [SparkFun Electronics](https://sparkfun.com). If
 you have questions or feedback about phant, you can contact the team at `data@sparkfun.com`.
 
-If you are having issues with phant, or find errors in the documentation, please report them
-at [github.com/sparkfun/phant/issues](https://github.com/sparkfun/phant/issues).
+If you are having issues with phant, or find errors in the documentation, please
+[submit an issue on GitHub](https://github.com/sparkfun/phant/issues).

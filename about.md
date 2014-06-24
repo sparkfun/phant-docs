@@ -5,6 +5,6 @@ permalink: /about/
 nav: true
 ---
 
-phant is a modular logging tool developed by [SparkFun Electronics](https://sparkfun.com) for collecting data from
-the [Internet of Things](http://en.wikipedia.org/wiki/Internet_of_Things).  phant is the open source software that powers
-[data.sparkfun.com](http://data.sparkfun.com).
+Phant is a modular [node.js](http://nodejs.org) based data logging tool for collecting data from
+the [Internet of Things](http://en.wikipedia.org/wiki/Internet_of_Things).  It is the open source software that powers
+[data.sparkfun.com](http://data.sparkfun.com), and is actively maintained by [SparkFun Electronics](https://sparkfun.com).

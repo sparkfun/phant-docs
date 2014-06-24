@@ -18,9 +18,9 @@ body {
 
 h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: 400; }
 
-a         { color: #2a7ae2; text-decoration: none; }
+a         { color: #E62E2F; text-decoration: none; }
 a:hover   { color: #000; text-decoration: underline; }
-a:visited { color: #205caa; }
+a:visited { color: #E62E2F; }
 
 /* Utility */
 
@@ -135,7 +135,16 @@ a:visited { color: #205caa; }
 /* Home styles */
 /* ----------------------------------------------------------*/
 
-.home h1 { margin-bottom: 25px; }
+.home h1 {
+  font-size: 42px;
+  letter-spacing: -1.75px;
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 25px;
+}
+
+.logo { text-align: center; margin-bottom: 30px; }
+.logo img { width: 400px; }
 
 .posts { list-style-type: none; }
 
@@ -149,13 +158,24 @@ a:visited { color: #205caa; }
 
 .posts .post-date {
   display: block;
-  font-size: 15px;
-  color: #818181;
+  font-size: 14px;
+  color: #444;
 }
 
 .posts .post-excerpt {
   font-size: 15px;
   color: #999;
+  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+a.more {
+  font-size: 13px;
+}
+
+.rss-subscribe {
+  margin-top: 50px;
+  font-size: 11px;
 }
 
 
@@ -237,7 +257,7 @@ a:visited { color: #205caa; }
 .post ul,
 .post ol { margin-left: 1.35em; }
 
-.post pre code { border: none; word-wrap: break-word; white-space: normal; }
+.post pre code { border: none; word-wrap: break-word; white-space: pre; }
 
 /* terminal */
 .post pre.terminal {
