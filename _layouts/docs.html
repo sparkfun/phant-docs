@@ -9,7 +9,7 @@ layout: default
     <div class="toc">
       <h5>Management</h5>
       <ul>
-        {% assign management = site.pages | where: "docs", "Management" | sort: "order" %}
+        {% assign management = site.pages %}
         {% for page in management %}
           {% if page.docs == "Management" %}
             <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
