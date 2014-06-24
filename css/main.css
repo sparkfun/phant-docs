@@ -140,11 +140,13 @@ a:visited { color: #E62E2F; }
   letter-spacing: -1.75px;
   line-height: 1;
   font-weight: 300;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #eee;
   margin-bottom: 25px;
 }
 
-.logo { text-align: center; margin-bottom: 30px; }
-.logo img { width: 400px; }
+.home .logo { text-align: center; margin-bottom: 30px; }
+.home .logo img { width: 400px; }
 
 .posts { list-style-type: none; }
 
@@ -364,6 +366,9 @@ a.more {
 }
 
 @media screen and (max-width: 600px) {
+
+  .home .logo img { width: 300px; }
+  .home h1 { display: none; }
 
   .wrap { padding: 0 12px; }
 
