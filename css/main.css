@@ -227,12 +227,12 @@ a:visited { color: #205caa; }
   font-size: 12px;
 }
 
-.post code { padding: 1px 5px; }
+.post code { padding: 1px 5px; white-space: nowrap;}
 
 .post ul,
 .post ol { margin-left: 1.35em; }
 
-.post pre code { border: none; word-wrap:break-word; }
+.post pre code { border: none; word-wrap: break-word; white-space: normal; }
 
 /* terminal */
 .post pre.terminal {
@@ -398,8 +398,44 @@ a:visited { color: #205caa; }
 }
 
 
-/* urls */
+/* docs */
 /* ----------------------------------------------------------*/
+
+.docs .docs-col-1 .toc {
+  padding-top: 12px;
+}
+
+.docs .docs-col-1 .toc ul {
+  list-style: none;
+}
+
+.docs .docs-col-1 .toc ul li a {
+  color: #828282;
+  font-size: 13px;
+}
+
+.docs .docs-col-1 {
+  float: left; 
+  margin-bottom: 15px;
+  width: 174px;
+  width: -webkit-calc(18% - 11px);
+  width: -moz-calc(18% - 11px);
+  width: -o-calc(18% - 11px);
+  width: calc(18% - 11px);
+  margin-right: 10px;
+}
+.docs .docs-col-2 {
+  float: left;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  width: 603px;
+  width: -webkit-calc(75% - 21px);
+  width: -moz-calc(82% - 21px);
+  width: -o-calc(82% - 21px);
+  width: calc(82% - 21px);
+  border-left: 1px solid #eee;
+}
+
 div.url {
   padding: 8px;
   font-family: Menlo,Monaco,"Courier New",monospace;

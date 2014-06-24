@@ -1,6 +1,7 @@
 ---
-layout: page
-title: Creating a Data Stream
+layout: docs
+title: Create
+docs: Management
 ---
 
 To create a data stream, you will need to provide a `title`, `description`, `tags`, and `fields`.  You will

@@ -1,9 +1,10 @@
 ---
-layout: page
-title: Deleting a Stream
+layout: docs
+title: Delete
+docs: Management
 ---
 
-If you would like to completely remove a stream, visit `{SERVER}/streams/delete` and fill in the form with
+If you would like to completely remove a stream, visit `{YOUR_SERVER}/streams/delete` and fill in the form with
 your keys.  For example, you can delete a stream on [data.sparkfun.com](http://data.sparkfun.com) by visiting
 [data.sparkfun.com/streams/delete](https://data.sparkfun.com/streams/delete).
 
@@ -29,5 +30,6 @@ When making a `HTTP DELETE` request, you should send your `DELETE_KEY` using the
 </div>
 
 {% highlight bash %}
-curl -X DELETE 'http://data.sparkfun.com/stream/{PUBLIC_KEY}/delete' -H 'Phant-Delete-Key: {DELETE_KEY}'
+curl -X DELETE 'http://data.sparkfun.com/stream/{PUBLIC_KEY}/delete' \
+  -H 'Phant-Delete-Key: {DELETE_KEY}'
 {% endhighlight %}
