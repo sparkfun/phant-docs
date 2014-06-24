@@ -1,9 +1,11 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: phant
+email: data@sparkfun.com
+github: sparkfun/phant
+twitter: phant_io
+description: "data collection for the internet of things. developed by sparkfun electronics."
 baseurl: ""
-url: "http://yourdomain.com"
+url: "http://phant.io"
 
 # Build settings
 markdown: kramdown
