@@ -9,9 +9,40 @@ layout: default
     <div class="toc">
       <h5>Management</h5>
       <ul>
-        {% assign management = site.pages %}
-        {% for page in management %}
+        {% for page in site.pages %}
           {% if page.docs == "Management" %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <h5>Input</h5>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.docs == "Input" %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <h5>Output</h5>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.docs == "Output" %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <h5>Hosting</h5>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.docs == "Hosting" %}
+            <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <h5>Contributing</h5>
+      <ul>
+        {% for page in site.pages %}
+          {% if page.docs == "Dev" %}
             <li><a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a></li>
           {% endif %}
         {% endfor %}
