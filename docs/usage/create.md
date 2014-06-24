@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Creating a Data Stream
-permalink: /docs/usage/create/
 ---
 
 To create a data stream, you will need to provide a `title`, `description`, `tags`, and `fields`.  You will

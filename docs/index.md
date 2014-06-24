@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Documentation
-permalink: /docs/
 nav: true
 ---
 
