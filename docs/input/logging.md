@@ -64,7 +64,7 @@ If your client doesn't separate the response headers from the body, the response
 would look like this:
 
     HTTP/1.1 400 Bad Request
-     content-type: text/plain
+     Content-Type: text/plain
      Date: Wed, 25 Jun 2014 20:41:53 GMT
      Connection: keep-alive
      Transfer-Encoding: chunked
@@ -72,4 +72,37 @@ would look like this:
      0 temperature is not a valid field for this stream.
 
      expecting: humidity, temp
+
+## JSON Response Examples
+
+If you are using a client that can parse [JSON](http://en.wikipedia.org/wiki/JSON), you can make a
+request that asks for the response to be returned in JSON format.  The simplest way to accomplish this
+is to append `.json` to the public key in the URL.
+
+<div class="url">
+  <span class="method POST">POST</span>
+  http://data.sparkfun.com/input/PUBLIC_KEY.json
+</div>
+
+**Example** JSON response body from a successful post:
+{% highlight json %}
+{"success":true,"message":"success"}
+{% endhighlight %}
+
+**Example** JSON response body from failed post:
+{% highlight json %}
+{"success":false,"message":"temperature is not a valid field for this stream. \n\nexpecting: humidity, temp"}
+{% endhighlight %}
+
+If your client doesn't separate the response headers from the body, the response from the server
+would look like this:
+{% highlight text %}
+HTTP/1.1 400 Bad Request
+ Content-Type: application/json
+ Date: Wed, 25 Jun 2014 21:11:55 GMT
+ Connection: keep-alive
+ Transfer-Encoding: chunked
+
+ {"success":false,"message":"temperature is not a valid field for this stream. \n\nexpecting: humidity, temp"}
+{% endhighlight %}
 
