@@ -27,10 +27,10 @@ When making a `HTTP DELETE` request, you should send your `DELETE_KEY` using the
 
 <div class="url">
   <span class="method DELETE">DELETE</span>
-  http://data.sparkfun.com/stream/PUBLIC_KEY/delete
+  http://data.sparkfun.com/stream/PUBLIC_KEY
 </div>
 
 {% highlight bash %}
-curl -X DELETE 'http://data.sparkfun.com/stream/PUBLIC_KEY/delete' \
+curl -X DELETE 'http://data.sparkfun.com/stream/PUBLIC_KEY' \
   -H 'Phant-Delete-Key: DELETE_KEY'
 {% endhighlight %}
