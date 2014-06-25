@@ -1,6 +1,6 @@
 ---
 layout: docs
-title: Logging Data
+title: HTTP
 docs: Input
 order: 1
 ---
@@ -104,5 +104,56 @@ HTTP/1.1 400 Bad Request
  Transfer-Encoding: chunked
 
  {"success":false,"message":"temperature is not a valid field for this stream. \n\nexpecting: humidity, temp"}
+{% endhighlight %}
+
+## JSONP Response Examples
+
+If you are using JavaScript in a web browser to log data, then you might be interested in using the
+[JSONP](http://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
+in a different domain, which is normally not possible because of the
+[same-origin policy]http://en.wikipedia.org/wiki/Same-origin_policy).
+
+Unlike all of the other methods, JSONP responses will always be sent with the `HTTP 200` success code.  We respond
+this way for the JSONP format because browsers will not parse the response body when the server replies with a HTTP error code.
+
+**Example** jQuery JSONP logging request
+
+{% highlight js %}
+var public_key = 'YOUR_PUBLIC_KEY';
+ $.ajax({
+   url: 'http://data.sparkfun.com/input/' + public_key + '.json',
+   jsonp: 'callback',
+   cache: true,
+   dataType: 'jsonp',
+   data: {
+     temp: '91.4',
+     humidity: '80%'
+   },
+   success: function(response) {
+     console.log(response.message);
+   }
+ });
+{% endhighlight %}
+
+**Example** JSONP response body from a successful post:
+{% highlight js %}
+typeof handler === 'function' && handler({"success":true,"message":"success"});
+{% endhighlight %}
+
+**Example** JSONP response body from failed post:
+{% highlight js %}
+typeof handler === 'function' && handler({"success":false,"message":"humidity missing from sent data. \n\nexpecting: humidity, temp"});
+{% endhighlight %}
+
+If your client doesn't separate the response headers from the body, the response from the server
+would look like this:
+{% highlight text %}
+HTTP/1.1 200 OK
+ Content-Type: text/javascript
+ Date: Wed, 25 Jun 2014 21:32:44 GMT
+ Connection: keep-alive
+ Transfer-Encoding: chunked
+
+ typeof handler === 'function' && handler({"success":false,"message":"humidity missing from sent data. \n\nexpecting: humidity, temp"});
 {% endhighlight %}
 
