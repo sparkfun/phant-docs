@@ -10,3 +10,6 @@ url: "http://phant.io"
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+kramdown:
+  auto_ids: true
