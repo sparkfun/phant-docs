@@ -451,8 +451,25 @@ div.url .DELETE {
   .home .logo img { width: 300px; }
   .home h1 { display: none; }
 
+  .docs {
+    margin-top: -15px;
+  }
+
   .docs .docs-col-1 {
-    display: none;
+    float: left; 
+    width: 100%;
+    margin-right: 0px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .docs .docs-col-1 .toc {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+
+  .docs .docs-col-1 .toc .section {
+    float: left;
+    width: 50%;
+    margin-bottom: 10px;
   }
 
   .docs .docs-col-2 {
