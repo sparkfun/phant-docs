@@ -44,7 +44,7 @@ curl -X GET 'http://data.sparkfun.com/output/PUBLIC_KEY.json'
 curl -X GET 'http://data.sparkfun.com/output/PUBLIC_KEY.csv?page=1'
 {% endhighlight %}
 
-The JSON response would look like this:
+The CSV response would look like this:
 {% highlight text %}
 humidity,temp,timestamp
 2,3,2014-06-25T21:35:29.827Z

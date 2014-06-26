@@ -5,8 +5,9 @@ docs: Output
 order: 2
 ---
 
-If you would like to retrieve info about the current state of your stream, you can make a request to the stats endpoint.  The
-data returned will include:
+If you would like to retrieve info about the current state of your stream, you can make a request to the stats endpoint.
+
+The data returned will include:
 
 * `pageCount` - The number of pages your data will span when paging your data during output.
 * `remaining` - The number of bytes you have remaining before hitting your data cap.
@@ -28,11 +29,6 @@ returned by the server.
 </div>
 
 **Example** Retrieve the stats for a stream in JSON format:
-
-<div class="url">
-  <span class="method GET">GET</span>
-  http://data.sparkfun.com/output/PUBLIC_KEY/stats.FORMAT
-</div>
 
 {% highlight bash %}
 curl -X GET 'http://data.sparkfun.com/output/PUBLIC_KEY/stats.json'
