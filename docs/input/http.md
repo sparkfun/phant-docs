@@ -18,7 +18,9 @@ You can make either a `HTTP GET` or `HTTP POST` request to log data, but when po
 We will be using `temp` and `humidity` as the field names in the following examples, but you should replace them
 with the names of the fields you entered when creating your data stream. Replace `PUBLIC_KEY` and `DELETE_KEY`
 with the keys provided to you when you created the stream.  You should make sure that you
-[URL encode](http://en.wikipedia.org/wiki/Percent-encoding) your data before sending it.
+[URL encode](http://en.wikipedia.org/wiki/Percent-encoding) your data before sending it.  When your data is logged,
+a `timestamp` field is automatically added to each row with the current server time in
+[ISO-8601 extended format](http://en.wikipedia.org/wiki/ISO_8601).
 
 <div class="url">
   <span class="method GET">GET</span>
@@ -42,7 +44,7 @@ curl -X POST 'http://data.sparkfun.com/stream/PUBLIC_KEY' \
   -d 'temp=91.4&=humidity=86%25'
 {% endhighlight %}
 
-## Plain Text Response Examples
+### Plain Text Response Examples
 
 Currently, responses are sent back in plain text format by default.  The first character of the text response
 will always be a `0` or a `1`, and the second character will always be a space. If the server responds with a `0`
@@ -65,6 +67,9 @@ would look like this:
 
     HTTP/1.1 400 Bad Request
      Content-Type: text/plain
+     X-Rate-Limit-Limit: 100
+     X-Rate-Limit-Remaining: 99
+     X-Rate-Limit-Reset: 1403798400
      Date: Wed, 25 Jun 2014 20:41:53 GMT
      Connection: keep-alive
      Transfer-Encoding: chunked
@@ -73,7 +78,7 @@ would look like this:
 
      expecting: humidity, temp
 
-## JSON Response Examples
+### JSON Response Examples
 
 If you are using a client that can parse [JSON](http://en.wikipedia.org/wiki/JSON), you can make a
 request that asks for the response to be returned in JSON format.  The simplest way to accomplish this
@@ -99,6 +104,9 @@ would look like this:
 {% highlight text %}
 HTTP/1.1 400 Bad Request
  Content-Type: application/json
+ X-Rate-Limit-Limit: 100
+ X-Rate-Limit-Remaining: 99
+ X-Rate-Limit-Reset: 1403798400
  Date: Wed, 25 Jun 2014 21:11:55 GMT
  Connection: keep-alive
  Transfer-Encoding: chunked
@@ -106,17 +114,17 @@ HTTP/1.1 400 Bad Request
  {"success":false,"message":"temperature is not a valid field for this stream. \n\nexpecting: humidity, temp"}
 {% endhighlight %}
 
-## JSONP Response Examples
+### JSONP Response Examples
 
 If you are using JavaScript in a web browser to log data, then you might be interested in using the
 [JSONP](http://en.wikipedia.org/wiki/JSONP) format.  JSONP allows you to make to requests from a server
-in a different domain, which is normally not possible because of the
-[same-origin policy]http://en.wikipedia.org/wiki/Same-origin_policy).
+from a different domain, which is normally not possible because of the
+[same-origin policy](http://en.wikipedia.org/wiki/Same-origin_policy).
 
 Unlike all of the other methods, JSONP responses will always be sent with the `HTTP 200` success code.  We respond
 this way for the JSONP format because browsers will not parse the response body when the server replies with a HTTP error code.
 
-**Example** jQuery JSONP logging request
+**Example** [jQuery](http://jquery.com) JSONP logging request
 
 {% highlight js %}
 var public_key = 'YOUR_PUBLIC_KEY';
@@ -150,6 +158,9 @@ would look like this:
 {% highlight text %}
 HTTP/1.1 200 OK
  Content-Type: text/javascript
+ X-Rate-Limit-Limit: 100
+ X-Rate-Limit-Remaining: 99
+ X-Rate-Limit-Reset: 1403798400
  Date: Wed, 25 Jun 2014 21:32:44 GMT
  Connection: keep-alive
  Transfer-Encoding: chunked
