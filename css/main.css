@@ -183,17 +183,21 @@ a.more {
 /* docs */
 /* ----------------------------------------------------------*/
 
-.docs .docs-col-1 .toc {
+.docs .toc {
   padding-top: 12px;
 }
 
-.docs .docs-col-1 .toc ul {
+.docs .toc ul {
   list-style: none;
 }
 
-.docs .docs-col-1 .toc ul li a {
+.docs .toc ul li a {
   color: #828282;
   font-size: 13px;
+}
+
+.docs .toc-mobile-header {
+  display: none;
 }
 
 .docs .docs-col-1 {
@@ -453,6 +457,12 @@ div.url .DELETE {
 
   .docs {
     margin-top: -15px;
+  }
+
+  .docs .toc-mobile-header {
+    display: block;
+    font-size: 25px;
+    margin-bottom: 8px;
   }
 
   .docs .docs-col-1 {
