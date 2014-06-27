@@ -340,12 +340,12 @@ div.url .DELETE {
   font-size: 12px;
 }
 
-.post code { padding: 1px 5px; white-space: nowrap; word-wrap: break-word;}
+.post code { padding: 1px 5px; white-space: nowrap; word-wrap: break-word; line-height: 24px;}
 
 .post ul,
 .post ol { margin-left: 1.35em; }
 
-.post pre code { border: none; white-space: pre; word-wrap: break-word; }
+.post pre code { border: none; white-space: pre; word-wrap: break-word;  line-height: 18px; }
 
 /* terminal */
 .post pre.terminal {
@@ -358,6 +358,14 @@ div.url .DELETE {
 }
 
 .post pre.terminal code { background-color: #333; }
+
+/* api */
+/* ----------------------------------------------------------*/
+
+.api h4 {
+  font-weight: bold;
+}
+
 
 /* Syntax highlighting styles */
 /* ----------------------------------------------------------*/
