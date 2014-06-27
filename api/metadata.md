@@ -21,7 +21,6 @@ javscript object or an array of stream objects when requesting data.
 * `id` Unique identifier for the stream.
   * Integer or Hex String
   * Unique
-  * Required
 * `title` User defined title for the stream.
   * String
   * Not unique
@@ -35,7 +34,6 @@ javscript object or an array of stream objects when requesting data.
   * Required
 * `flagged` Flag for admins to hide streams from public stream lists due to objectionable content.
   * Boolean
-  * Required
 * `fields` User defined field names that will be used when posting data.
   * Array
   * Required
@@ -44,10 +42,8 @@ javscript object or an array of stream objects when requesting data.
   * Optional
 * `date` Automatically set by server when stream is created.
   * Date
-  * Required
 * `last_pushed` Automatically set by server when new data is posted to the stream.
   * Date
-  * Required
 
 ## phant-meta Modules
 
@@ -83,7 +79,7 @@ Used by phant to describe the metadata module when logging errors and other info
 
 Returns a `callback` with the arguments of `err` and `streams`. `streams` will be a JavaScript array of
 objects with the [default schema](#default-schema) as properties. If `streams` is falsey, assume no streams matched
-you query. If `err` is set, assume the call failed.
+your query. If `err` is truthy, assume the call failed.
 
 **Example** Retrieve a list of streams using the default settings
 
@@ -137,7 +133,7 @@ you query. If `err` is set, assume the call failed.
   * Default `null`
 
 Returns a `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object
-with the [stream schema](#default-schema) as properties. If `err` is set, assume the call failed.
+with the [stream schema](#default-schema) as properties. If `err` is truthy, assume the call failed.
 
 The main difference between `list` and `each` is that `each` will call the callback one stream at a time until
 it reaches the defined `limit`.  If no limit is defined, then it will continue calling the callback until it runs
@@ -181,7 +177,7 @@ out of streams that match the `query`.
 
 Retrieves a specific stream by `id`. Returns a `callback` with the arguments of `err` and `stream`.
 `stream` will be a JavaScript object with the [stream schema](#default-schema) as properties.
-If `err` is set, assume the call failed.
+If `err` is truthy, assume the call failed.
 
 **Example** Retrieve stream *1a2b3c*
 
@@ -193,6 +189,39 @@ If `err` is set, assume the call failed.
     }
 
     console.log(stream.title);
+
+  });
+{% endhighlight %}
+
+#### create (data, callback)
+
+* data `Object`
+* callback `Function`
+  * Arguments
+    * err `Mixed`
+
+Creates a new stream. `data` should always include the required portions of the [stream schema](#default-schema).
+Returns a `callback` with `err` as the only argument. If `err` is truthy, assume the call failed.
+
+**Example** Retrieve stream *1a2b3c*
+
+{% highlight js %}
+
+  var new_stream = {
+    title: 'Weather Station',
+    description: 'Monitors temp and rain in Uniontown, MD',
+    hidden: false,
+    fields: ['temp', 'rain'],
+    tags: ['Uniontown']
+  };
+
+  metadata.create(new_stream, function(err, stream) {
+
+    if(err) {
+      return console.log('creation failed ' + err);
+    }
+
+    console.log('created');
 
   });
 {% endhighlight %}
