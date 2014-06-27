@@ -11,7 +11,7 @@ the [Internet of Things](http://en.wikipedia.org/wiki/Internet_of_Things).  It i
 
 
 Phant is short for *elephant*.  Elephants are known for their remarkable recall ability,
-so it seemed appropriate to name a data logging project in honor of a animal that [never forgets](http://www.scientificamerican.com/article/elephants-never-forget/).
+so it seemed appropriate to name a data logging project in honor of an animal that [never forgets](http://www.scientificamerican.com/article/elephants-never-forget/).
 
 <div style="text-align: center;">
   <img src="/img/ryansalge_phant.jpg" width="400px">

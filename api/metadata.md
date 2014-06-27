@@ -77,13 +77,15 @@ Used by phant to describe the metadata module when logging errors and other info
   * Optional
   * Default `null`
 
-Returns a `callback` with the arguments of `err` and `streams`. `streams` will be a JavaScript array of
+Calls the `callback` with the arguments of `err` and `streams`. `streams` will be a JavaScript array of
 objects with the [default schema](#default-schema) as properties. If `streams` is falsey, assume no streams matched
 your query. If `err` is truthy, assume the call failed.
 
 **Example** Retrieve a list of streams using the default settings
 
 {% highlight js %}
+  var metadata = require('phant-meta-test')();
+
   metadata.list(function(err, streams) {
 
     if(err) {
@@ -100,6 +102,8 @@ your query. If `err` is truthy, assume the call failed.
 **Example** Retrieve public streams 50-100 sorted by date descending
 
 {% highlight js %}
+  var metadata = require('phant-meta-test')();
+
   metadata.list(function(err, streams) {
 
     if(err) {
@@ -132,7 +136,7 @@ your query. If `err` is truthy, assume the call failed.
   * Optional
   * Default `null`
 
-Returns a `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object
+Calls the `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object
 with the [stream schema](#default-schema) as properties. If `err` is truthy, assume the call failed.
 
 The main difference between `list` and `each` is that `each` will call the callback one stream at a time until
@@ -142,6 +146,8 @@ out of streams that match the `query`.
 **Example** Retrieve all streams using the default settings
 
 {% highlight js %}
+  var metadata = require('phant-meta-test')();
+
   metadata.each(function(err, stream) {
 
     if(err) {
@@ -156,6 +162,8 @@ out of streams that match the `query`.
 **Example** Retrieve flagged streams 50-100 sorted by last_pushed ascending
 
 {% highlight js %}
+  var metadata = require('phant-meta-test')();
+
   metadata.list(function(err, stream) {
 
     if(err) {
@@ -175,13 +183,15 @@ out of streams that match the `query`.
     * err `Mixed`
     * stream `Object`
 
-Retrieves a specific stream by `id`. Returns a `callback` with the arguments of `err` and `stream`.
+Retrieves a specific stream by `id`. Calls the `callback` with the arguments of `err` and `stream`.
 `stream` will be a JavaScript object with the [stream schema](#default-schema) as properties.
 If `err` is truthy, assume the call failed.
 
 **Example** Retrieve stream *1a2b3c*
 
 {% highlight js %}
+  var metadata = require('phant-meta-test')();
+
   metadata.get('1a2b3c', function(err, stream) {
 
     if(err) {
@@ -203,9 +213,11 @@ If `err` is truthy, assume the call failed.
 Creates a new stream. `data` should always include the required portions of the [stream schema](#default-schema).
 Returns a `callback` with `err` as the only argument. If `err` is truthy, assume the call failed.
 
-**Example** Retrieve stream *1a2b3c*
+**Example** Create a stream
 
 {% highlight js %}
+
+  var metadata = require('phant-meta-test')();
 
   var new_stream = {
     title: 'Weather Station',
@@ -225,3 +237,30 @@ Returns a `callback` with `err` as the only argument. If `err` is truthy, assume
 
   });
 {% endhighlight %}
+
+#### remove (id, callback)
+
+* id `Number` or `String`
+* callback `Function`
+  * Arguments
+    * err `Mixed`
+
+Removes a specific stream by `id`. Calls the a `callback` with `err` as the only argument.
+If `err` is truthy, assume the call failed.
+
+**Example** Remove stream *1a2b3c*
+
+{% highlight js %}
+  var metadata = require('phant-meta-test')();
+
+  metadata.remove('1a2b3c', function(err) {
+
+    if(err) {
+      return console.log('failed ' + err);
+    }
+
+    console.log('removed');
+
+  });
+{% endhighlight %}
+
