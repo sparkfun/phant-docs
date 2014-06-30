@@ -209,6 +209,7 @@ If `err` is truthy, assume the get failed.
 * callback `Function`
   * Arguments
     * err `Mixed`
+    * stream `Object`
 
 Creates a new stream. `data` should always include the required portions of the [stream schema](#default-schema).
 Calls the `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object with the
@@ -246,6 +247,7 @@ Calls the `callback` with the arguments of `err` and `stream`. `stream` will be 
 * callback `Function`
   * Arguments
     * err `Mixed`
+    * stream `Object`
 
 Updates existing stream with supplied `data`. `data` should conform to the [stream schema](#default-schema).
 Calls the `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object with the
@@ -290,6 +292,32 @@ If `err` is truthy, assume the delete failed.
     }
 
     console.log('removed');
+
+  });
+{% endhighlight %}
+
+#### touch (id, callback)
+
+* id `Number` or `String`
+* callback `Function`
+  * Arguments
+    * err `Mixed`
+
+Helper method for updating `last_pushed` to the current time. Calls the a `callback` with `err` as
+the only argument. If `err` is truthy, assume touch failed.
+
+**Example** Touch stream *1a2b3c*
+
+{% highlight js %}
+  var metadata = require('phant-meta-test')();
+
+  metadata.touch('1a2b3c', function(err) {
+
+    if(err) {
+      return console.log('failed ' + err);
+    }
+
+    console.log('touched');
 
   });
 {% endhighlight %}
