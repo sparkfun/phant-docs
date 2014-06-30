@@ -42,7 +42,7 @@ javscript object or an array of stream objects when requesting data.
   * Optional
 * `date` Automatically set by server when stream is created.
   * Date
-* `last_pushed` Automatically set by server when new data is posted to the stream.
+* `last_push` Automatically set by server when new data is posted to the stream.
   * Date
 
 ## phant-meta Modules
@@ -159,7 +159,7 @@ out of streams that match the `query`.
   });
 {% endhighlight %}
 
-**Example** Retrieve flagged streams 50-100 sorted by last_pushed ascending
+**Example** Retrieve flagged streams 50-100 sorted by last_push ascending
 
 {% highlight js %}
   var metadata = require('phant-meta-test')();
@@ -172,7 +172,7 @@ out of streams that match the `query`.
 
     console.log(stream.title);
 
-  }, { flagged: true }, 50, 50, { property: 'last_pushed', direction: 'asc' });
+  }, { flagged: true }, 50, 50, { property: 'last_push', direction: 'asc' });
 {% endhighlight %}
 
 #### get (id, callback)
@@ -307,7 +307,7 @@ If `err` is truthy, assume the delete failed.
   * Arguments
     * err `Mixed`
 
-Helper method for updating `last_pushed` to the current time. Calls the a `callback` with `err` as
+Helper method for updating `last_push` to the current time. Calls the a `callback` with `err` as
 the only argument. If `err` is truthy, assume touch failed.
 
 **Example** Touch stream *1a2b3c*

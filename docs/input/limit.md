@@ -5,13 +5,13 @@ docs: Input
 order: 1
 ---
 
-We aren't thrilled about having to rate limit on [data.sparkfun.com](https://data.sparkfun.com), but in order to prevent
-service outages, we have to enforce rate limits for anyone that floods the servers with logging requests.  Most users won't hit
-the rate limit during normal use, but it is something you should be aware of if your device needs to send a lot of logging requests.
+Unfortunately we have to enforce rate limits on [data.sparkfun.com](https://data.sparkfun.com) in order to prevent service outages.
+Most users won't hit the rate limit during normal use, but it is something you should be aware of if your device needs to send a lot of logging requests in a short
+period of time.
 
 ## 15 Minute Windows
 
-Rate limits are divided into 15 minute intervals on [data.sparkfun.com](https://data.sparkfun.com).  You are currently
+Limits are divided into 15 minute intervals on [data.sparkfun.com](https://data.sparkfun.com).  You are currently
 limited to making 100 log requests every 15 minutes.  You can make those requests in bursts, or spread them out over the entire window.
 
 ## HTTP Headers and Response Codes
