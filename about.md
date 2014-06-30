@@ -14,7 +14,9 @@ Phant is short for *elephant*.  Elephants are known for their remarkable recall 
 so it seemed appropriate to name a data logging project in honor of an animal that [never forgets](http://www.scientificamerican.com/article/elephants-never-forget/).
 
 <div style="text-align: center;">
-  <img src="/img/ryansalge_phant.jpg" width="400px">
+  <a href="http://ryansalge.tumblr.com/post/39822657759/ryan-salge">
+    <img src="/img/ryansalge_phant.jpg" width="400px">
+  </a>
 </div>
 
 

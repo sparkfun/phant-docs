@@ -185,7 +185,7 @@ out of streams that match the `query`.
 
 Retrieves a specific stream by `id`. Calls the `callback` with the arguments of `err` and `stream`.
 `stream` will be a JavaScript object with the [stream schema](#default-schema) as properties.
-If `err` is truthy, assume the call failed.
+If `err` is truthy, assume the get failed.
 
 **Example** Retrieve stream *1a2b3c*
 
@@ -211,7 +211,8 @@ If `err` is truthy, assume the call failed.
     * err `Mixed`
 
 Creates a new stream. `data` should always include the required portions of the [stream schema](#default-schema).
-Returns a `callback` with `err` as the only argument. If `err` is truthy, assume the call failed.
+Calls the `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object with the
+[stream schema](#default-schema) as properties. If `err` is truthy, assume the creation failed.
 
 **Example** Create a stream
 
@@ -233,12 +234,41 @@ Returns a `callback` with `err` as the only argument. If `err` is truthy, assume
       return console.log('creation failed ' + err);
     }
 
-    console.log('created');
+    console.log('created: ' + stream.id);
 
   });
 {% endhighlight %}
 
-#### remove (id, callback)
+#### update (id, data, callback)
+
+* id `Number` or `String`
+* data `Object`
+* callback `Function`
+  * Arguments
+    * err `Mixed`
+
+Updates existing stream with supplied `data`. `data` should conform to the [stream schema](#default-schema).
+Calls the `callback` with the arguments of `err` and `stream`. `stream` will be a JavaScript object with the
+[stream schema](#default-schema) as properties. If `err` is truthy, assume the update failed.
+
+**Example** Update stream stream *1a2b3c*
+
+{% highlight js %}
+
+  var metadata = require('phant-meta-test')();
+
+  metadata.update('1a2b3c', { title: 'Uniontown Weather Station' }, function(err, stream) {
+
+    if(err) {
+      return console.log('update failed ' + err);
+    }
+
+    console.log('title set to: ' + stream.title);
+
+  });
+{% endhighlight %}
+
+#### delete (id, callback)
 
 * id `Number` or `String`
 * callback `Function`
@@ -246,14 +276,14 @@ Returns a `callback` with `err` as the only argument. If `err` is truthy, assume
     * err `Mixed`
 
 Removes a specific stream by `id`. Calls the a `callback` with `err` as the only argument.
-If `err` is truthy, assume the call failed.
+If `err` is truthy, assume the delete failed.
 
 **Example** Remove stream *1a2b3c*
 
 {% highlight js %}
   var metadata = require('phant-meta-test')();
 
-  metadata.remove('1a2b3c', function(err) {
+  metadata.delete('1a2b3c', function(err) {
 
     if(err) {
       return console.log('failed ' + err);
