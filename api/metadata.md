@@ -259,7 +259,11 @@ Calls the `callback` with the arguments of `err` and `stream`. `stream` will be 
 
   var metadata = require('phant-meta-test')();
 
-  metadata.update('1a2b3c', { title: 'Uniontown Weather Station' }, function(err, stream) {
+  var update_data = {
+    title: 'Uniontown Weather Station'
+  };
+
+  metadata.update('1a2b3c', update_data, function(err, stream) {
 
     if(err) {
       return console.log('update failed ' + err);
