@@ -89,7 +89,7 @@ phant telnet server running on port 8081
 {% endhighlight %}
 
 You can now browse to [http://beaglebone.local:8080/](http://beaglebone.local:8080/), and you should see
-`phant is ready and listening for input.` in your web browser.
+*phant is ready and listening for input.* in your web browser.
 
 ## Creating a Test Stream
 By default, the web stream management user interface (like the one [data.sparkfun.com](https://data.sparkfun.com) uses)
@@ -102,22 +102,22 @@ server over telnet by running `telnet beaglebone.local 8081`.
 
 {% highlight text %}
 $ telnet beaglebone.local 8081
- Trying 10.0.1.10...
- Connected to beaglebone.local.
- Escape character is '^]'.
-             .-.._
-       __  /`     '.
-    .-'  `/   (   a \
-   /      (    \,_   \
-  /|       '---` |\ =|
- ` \    /__.-/  /  | |
-    |  / / \ \  \   \_\  jgs
-    |__|_|  |_|__\
-   welcome to phant.
- 
- Type 'help' for a list of available commands
- 
- phant>
+Trying 10.0.1.10...
+Connected to beaglebone.local.
+Escape character is '^]'.
+           .-.._
+     __  /`     '.
+  .-'  `/   (   a \
+ /      (    \,_   \
+/|       '---` |\ =|
+` \    /__.-/  /  | |
+  |  / / \ \  \   \_\  jgs
+  |__|_|  |_|__\
+ welcome to phant.
+
+Type 'help' for a list of available commands
+
+phant>
 {% endhighlight %}
 
 If you see a `phant>` prompt, then you have successfully connected to the telnet stream manager.  You can now type `create`
@@ -125,19 +125,19 @@ and follow the prompts to create your first data stream.
 
 {% highlight text %}
 phant> create
- Enter a title> Test
- Enter a description> Testing BeagleBone Black.
- Enter fields (comma separated)> test
- Enter tags (comma separated)> test
- 
- Stream created!
- PUBLIC KEY: aAYVpdNaOeu6rQ80Ogeau2vxDKq
- PRIVATE KEY:  PW4OPY5B6Ztjd5wD6zOXuY4BD2L
- DELETE KEY:  lAEwmPboWZuBqa10LQ9wcyz9qn8
- 
- If you need help getting started, visit http://phant.io/docs.
- phant> quit
- Connection closed by foreign host.
+Enter a title> Test
+Enter a description> Testing BeagleBone Black.
+Enter fields (comma separated)> test
+Enter tags (comma separated)> test
+
+Stream created!
+PUBLIC KEY: aAYVpdNaOeu6rQ80Ogeau2vxDKq
+PRIVATE KEY:  PW4OPY5B6Ztjd5wD6zOXuY4BD2L
+DELETE KEY:  lAEwmPboWZuBqa10LQ9wcyz9qn8
+
+If you need help getting started, visit http://phant.io/docs.
+phant> quit
+Connection closed by foreign host.
 {% endhighlight %}
 
 After responding to all of the prompts, you should be given a unique `PUBLIC KEY`, `PRIVATE KEY`, and `DELETE KEY`. **Write these down.**
@@ -175,17 +175,17 @@ this by installing the `forever` npm module.
 
 {% highlight bash %}
 root@beaglebone:~# npm install -g forever
- npm http GET https://registry.npmjs.org/forever
- npm http 304 https://registry.npmjs.org/forever
- ...etc
+npm http GET https://registry.npmjs.org/forever
+npm http 304 https://registry.npmjs.org/forever
+...etc
 {% endhighlight %}
 
 You can now start phant using `forever`.
 {% highlight bash %}
 root@beaglebone:~# forever start /usr/local/bin/phant
- warn:    --minUptime not set. Defaulting to: 1000ms
- warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
- info:    Forever processing file: /usr/local/bin/phant
+warn:    --minUptime not set. Defaulting to: 1000ms
+warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+info:    Forever processing file: /usr/local/bin/phant
 {% endhighlight %}
 
 Phant will now stay running after disconnecting from the SSH session.

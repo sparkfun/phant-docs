@@ -27,14 +27,14 @@ so they only indicate the rate limit for the current stream.  You will have sepa
 **Example** Standard response:
 
     HTTP/1.1 200 OK
-     Content-Type: text/plain
-     X-Rate-Limit-Limit: 100
-     X-Rate-Limit-Remaining: 99
-     X-Rate-Limit-Reset: 1403798400
-     Date: Thu, 26 Jun 2014 15:45:03 GMT
-     Transfer-Encoding: chunked
+    Content-Type: text/plain
+    X-Rate-Limit-Limit: 100
+    X-Rate-Limit-Remaining: 99
+    X-Rate-Limit-Reset: 1403798400
+    Date: Thu, 26 Jun 2014 15:45:03 GMT
+    Transfer-Encoding: chunked
 
-     1 success
+    1 success
 
 When you exceed the rate limit for a given stream, [data.sparkfun.com](https://data.sparkfun.com)
 will return a `HTTP 429 Too Many Requests` response code, along with an error message.
@@ -42,11 +42,11 @@ will return a `HTTP 429 Too Many Requests` response code, along with an error me
 **Example** Over the limit response:
 
     HTTP/1.1 429 Too Many Requests
-     Content-Type: text/plain
-     X-Rate-Limit-Limit: 100
-     X-Rate-Limit-Remaining: 0
-     X-Rate-Limit-Reset: 1403798130
-     Date: Thu, 26 Jun 2014 15:41:30 GMT
-     Transfer-Encoding: chunked
+    Content-Type: text/plain
+    X-Rate-Limit-Limit: 100
+    X-Rate-Limit-Remaining: 0
+    X-Rate-Limit-Reset: 1403798130
+    Date: Thu, 26 Jun 2014 15:41:30 GMT
+    Transfer-Encoding: chunked
 
-     0 rate limit exceeded. try again in 840 seconds.
+    0 rate limit exceeded. try again in 840 seconds.
