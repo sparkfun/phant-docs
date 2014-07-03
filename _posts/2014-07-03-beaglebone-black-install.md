@@ -14,6 +14,13 @@ This tutorial will help you get phant up and running on a
   </a>
 </div>
 
+**Table of Contents**
+
+* toc
+{:toc}
+
+## Hardware
+
 The wish list below containing the list of hardware used in this tutorial.
 
 <script src="https://www.sparkfun.com/wish_lists/90573.js"></script>
@@ -38,17 +45,17 @@ To connect to your BeagleBone, you need to run `ssh root@beaglebone.local` from 
 
 {% highlight bash %}
 $ ssh root@beaglebone.local
-The authenticity of host 'beaglebone.local (10.0.1.10)' cannot be established.
-RSA key fingerprint is 19:f8:35:4a:fe:f3:fd:d2:46:3f:ed:d8:6a:05:e1:16.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'beaglebone.local' (RSA) to the list of known hosts.
-Debian GNU/Linux 7
-
-BeagleBoard.org BeagleBone Debian Image 2014-04-23
-
-Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
-Last login: Thu Jul  3 14:34:16 2014 from todd.local
-root@beaglebone:~#
+ The authenticity of host 'beaglebone.local (10.0.1.10)' cannot be established.
+ RSA key fingerprint is 19:f8:35:4a:fe:f3:fd:d2:46:3f:ed:d8:6a:05:e1:16.
+ Are you sure you want to continue connecting (yes/no)? yes
+ Warning: Permanently added 'beaglebone.local' (RSA) to the list of known hosts.
+ Debian GNU/Linux 7
+ 
+ BeagleBoard.org BeagleBone Debian Image 2014-04-23
+ 
+ Support/FAQ: http://elinux.org/Beagleboard:BeagleBoneBlack_Debian
+ Last login: Thu Jul  3 14:34:16 2014 from todd.local
+ root@beaglebone:~#
 {% endhighlight %}
 
 If you see the prompt `root@beaglebone:~#`, then you have connected successfully.
@@ -63,7 +70,7 @@ to stop Apache.
 You can stop Apache by running `service apache2 stop` from the SSH prompt.
 {% highlight bash %}
 root@beaglebone:~# service apache2 stop
-[ ok ] Stopping apache2 (via systemctl): apache2.service.
+ [ ok ] Stopping apache2 (via systemctl): apache2.service.
 {% endhighlight %}
 
 ## Installing Phant
@@ -74,9 +81,9 @@ Install the `phant` package via npm.
 
 {% highlight bash %}
 root@beaglebone:~# npm install -g phant
-npm http GET https://registry.npmjs.org/phant
-npm http 304 https://registry.npmjs.org/phant
-...etc
+ npm http GET https://registry.npmjs.org/phant
+ npm http 304 https://registry.npmjs.org/phant
+ ...etc
 {% endhighlight %}
 
 ## Starting Phant
@@ -84,8 +91,8 @@ Now that you have the required packages installed, you can start the phant serve
 
 {% highlight bash %}
 root@beaglebone:~# phant
-phant http server running on port 8080
-phant telnet server running on port 8081
+ phant http server running on port 8080
+ phant telnet server running on port 8081
 {% endhighlight %}
 
 You can now browse to [http://beaglebone.local:8080/](http://beaglebone.local:8080/), and you should see
@@ -102,22 +109,22 @@ server over telnet by running `telnet beaglebone.local 8081`.
 
 {% highlight text %}
 $ telnet beaglebone.local 8081
-Trying 10.0.1.10...
-Connected to beaglebone.local.
-Escape character is '^]'.
-           .-.._
-     __  /`     '.
-  .-'  `/   (   a \
- /      (    \,_   \
-/|       '---` |\ =|
-` \    /__.-/  /  | |
-  |  / / \ \  \   \_\  jgs
-  |__|_|  |_|__\
- welcome to phant.
-
-Type 'help' for a list of available commands
-
-phant>
+ Trying 10.0.1.10...
+ Connected to beaglebone.local.
+ Escape character is '^]'.
+            .-.._
+      __  /`     '.
+   .-'  `/   (   a \
+  /      (    \,_   \
+ /|       '---` |\ =|
+ ` \    /__.-/  /  | |
+   |  / / \ \  \   \_\  jgs
+   |__|_|  |_|__\
+  welcome to phant.
+ 
+ Type 'help' for a list of available commands
+ 
+ phant>
 {% endhighlight %}
 
 If you see a `phant>` prompt, then you have successfully connected to the telnet stream manager.  You can now type `create`
@@ -125,19 +132,19 @@ and follow the prompts to create your first data stream.
 
 {% highlight text %}
 phant> create
-Enter a title> Test
-Enter a description> Testing BeagleBone Black.
-Enter fields (comma separated)> test
-Enter tags (comma separated)> test
-
-Stream created!
-PUBLIC KEY: aAYVpdNaOeu6rQ80Ogeau2vxDKq
-PRIVATE KEY:  PW4OPY5B6Ztjd5wD6zOXuY4BD2L
-DELETE KEY:  lAEwmPboWZuBqa10LQ9wcyz9qn8
-
-If you need help getting started, visit http://phant.io/docs.
-phant> quit
-Connection closed by foreign host.
+ Enter a title> Test
+ Enter a description> Testing BeagleBone Black.
+ Enter fields (comma separated)> test
+ Enter tags (comma separated)> test
+ 
+ Stream created!
+ PUBLIC KEY: aAYVpdNaOeu6rQ80Ogeau2vxDKq
+ PRIVATE KEY:  PW4OPY5B6Ztjd5wD6zOXuY4BD2L
+ DELETE KEY:  lAEwmPboWZuBqa10LQ9wcyz9qn8
+ 
+ If you need help getting started, visit http://phant.io/docs.
+ phant> quit
+ Connection closed by foreign host.
 {% endhighlight %}
 
 After responding to all of the prompts, you should be given a unique `PUBLIC KEY`, `PRIVATE KEY`, and `DELETE KEY`. **Write these down.**
@@ -175,20 +182,20 @@ this by installing the `forever` npm module.
 
 {% highlight bash %}
 root@beaglebone:~# npm install -g forever
-npm http GET https://registry.npmjs.org/forever
-npm http 304 https://registry.npmjs.org/forever
-...etc
+ npm http GET https://registry.npmjs.org/forever
+ npm http 304 https://registry.npmjs.org/forever
+ ...etc
 {% endhighlight %}
 
 You can now start phant using `forever`.
 {% highlight bash %}
 root@beaglebone:~# forever start /usr/local/bin/phant
-warn:    --minUptime not set. Defaulting to: 1000ms
-warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
-info:    Forever processing file: /usr/local/bin/phant
+ warn:    --minUptime not set. Defaulting to: 1000ms
+ warn:    --spinSleepTime not set. Your script will exit if it does not stay up for at least 1000ms
+ info:    Forever processing file: /usr/local/bin/phant
 {% endhighlight %}
 
-Phant will now stay running after disconnecting from the SSH session.
+Phant will now continue running after disconnecting from the SSH session.
 
 ## Final Thoughts
 You can read more about how to interact with phant by visiting [phant.io/docs](/docs). If you spot any errors, or have any issues,
