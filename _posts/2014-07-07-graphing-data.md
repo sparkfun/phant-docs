@@ -52,7 +52,7 @@ function drawChart() {
 
     $.each(results, function (i, v) {
       data.addRow([
-        (new Date(v.measurementTime)),
+        (new Date(v.timestamp)),
         parseFloat(v.tempf),
         parseFloat(v.windspeedmph)
       ]);
@@ -142,14 +142,14 @@ data.addColumn('number', 'Wind Speed MPH');
 Now that you have added your column definitions to the DataTable, you are ready to load it with your logged data. Row data
 is always returned from the server as strings, so you will need to convert the data to the appropriate data type before
 adding it to the DataTable.  You will need to add your data to the array passed to `addRow` in the order of your column
-definition.  In this example, we will be using the `measurementTime`, `tempf`, and `windspeedmph`, which are
+definition.  In this example, we will be using the `timestamp`, `tempf`, and `windspeedmph`, which are
 fields that were defined during the creation of the weather station data stream.
 
 **Example** Loop through data and add rows to the DataTable
 {% highlight js %}
 $.each(results, function (i, row) {
   data.addRow([
-    (new Date(row.measurementTime)),
+    (new Date(row.timestamp)),
     parseFloat(row.tempf),
     parseFloat(row.windspeedmph)
   ]);
@@ -202,7 +202,7 @@ chart.draw(data, {
 
           $.each(results, function (i, row) {
             data.addRow([
-              (new Date(row.measurementTime)),
+              (new Date(row.timestamp)),
               parseFloat(row.tempf),
               parseFloat(row.windspeedmph)
             ]);
