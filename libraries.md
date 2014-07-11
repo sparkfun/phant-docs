@@ -7,9 +7,15 @@ nav: true
 
 There are more libraries in various stages of completion, but currently the Arduino library is the
 only client library that is ready to be used.  If you have a phant client library to add to this 
-list, please email a link to `data@sparkfun.com`.
+list, please [submit an issue on GitHub](https://github.com/sparkfun/phant-docs/issues) with
+a link to your library.
 
 ## Arduino
 
 * [phant-arduino](https://github.com/sparkfun/phant-arduino) - Web client independent library for building
 Phant compatible HTTP requests.
+
+## Python
+
+* [python-phant](https://github.com/matze/python-phant)
+* [pyphant](https://bitbucket.org/boomlinde/pyphant)
