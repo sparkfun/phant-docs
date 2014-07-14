@@ -19,3 +19,7 @@ Phant compatible HTTP requests.
 
 * [python-phant](https://github.com/matze/python-phant)
 * [pyphant](https://bitbucket.org/boomlinde/pyphant)
+
+## Ruby
+
+* [PhantRb](https://github.com/girishso/phant_rb)
