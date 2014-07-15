@@ -5,25 +5,34 @@ permalink: /libraries/
 nav: true
 ---
 
-There are more libraries in various stages of completion, but currently the Arduino library is the
-only client library that is ready to be used.  If you have a phant client library to add to this 
+This list contains user contributed client libraries for phant.  If you have a phant client library to add to this 
 list, please [submit an issue on GitHub](https://github.com/sparkfun/phant-docs/issues) with
-a link to your library.
+a link to your library.  If you can't find a client library in this list that fits your needs,
+there is also a growing list of example code
+[included in the phant repo](https://github.com/sparkfun/phant/tree/master/examples).
 
-## Arduino
+### Arduino
 
 * [phant-arduino](https://github.com/sparkfun/phant-arduino) - Web client independent library for building
 Phant compatible HTTP requests.
 
-## C&#35;
+### C&#35;
 
 * [phant.cs](https://github.com/faunzi/phant)
 
-## Python
+### Electric Imp
+
+* [SparkFunStream](https://github.com/electricimp/reference/tree/master/webservices/SparkFunStream)
+
+### PHP
+
+* [Phant.php](https://github.com/sparkfun/SparkLib/blob/master/lib/SparkLib/Phant.php)
+
+### Python
 
 * [python-phant](https://github.com/matze/python-phant)
 * [pyphant](https://bitbucket.org/boomlinde/pyphant)
 
-## Ruby
+### Ruby
 
 * [PhantRb](https://github.com/girishso/phant_rb)
