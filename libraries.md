@@ -15,6 +15,10 @@ a link to your library.
 * [phant-arduino](https://github.com/sparkfun/phant-arduino) - Web client independent library for building
 Phant compatible HTTP requests.
 
+## C#
+
+* [phant.cs](https://github.com/faunzi/phant)
+
 ## Python
 
 * [python-phant](https://github.com/matze/python-phant)
