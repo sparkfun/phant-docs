@@ -30,6 +30,7 @@ Phant compatible HTTP requests.
 
 ### PHP
 
+* [PHPePhant](https://github.com/hailspuds/PHPePhant)
 * [Phant.php](https://github.com/sparkfun/SparkLib/blob/master/lib/SparkLib/Phant.php)
 
 ### Python
