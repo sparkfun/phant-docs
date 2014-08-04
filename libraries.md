@@ -28,6 +28,10 @@ Phant compatible HTTP requests.
 
 * [SparkFunStream](https://github.com/electricimp/reference/tree/master/webservices/SparkFunStream)
 
+### Java
+
+* [JPhant](https://github.com/JPhant/JPhant_Java_Based_Phant_Library)
+
 ### PHP
 
 * [PHPePhant](https://github.com/hailspuds/PHPePhant)
@@ -41,3 +45,7 @@ Phant compatible HTTP requests.
 ### Ruby
 
 * [PhantRb](https://github.com/girishso/phant_rb)
+
+### Rust
+
+* [phant-rust](https://github.com/freiguy1/phant-rust)
