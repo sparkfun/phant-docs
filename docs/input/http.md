@@ -39,7 +39,7 @@ When making a `HTTP POST` request, you should send your `PRIVATE_KEY` using the 
 </div>
 
 {% highlight bash %}
-curl -X POST 'http://data.sparkfun.com/stream/PUBLIC_KEY' \
+curl -X POST 'http://data.sparkfun.com/input/PUBLIC_KEY' \
   -H 'Phant-Private-Key: PRIVATE_KEY' \
   -d 'temp=91.4&=humidity=86%25'
 {% endhighlight %}
