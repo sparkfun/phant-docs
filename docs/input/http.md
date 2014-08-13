@@ -28,7 +28,7 @@ a `timestamp` field is automatically added to each row with the current server t
 </div>
 
 {% highlight bash %}
-curl -X GET 'http://data.sparkfun.com/input/PUBLIC_KEY?private_key=PRIVATE_KEY&temp=91.4&=humidity=86%25'
+curl -X GET 'http://data.sparkfun.com/input/PUBLIC_KEY?private_key=PRIVATE_KEY&temp=91.4&humidity=86%25'
 {% endhighlight %}
 
 When making a `HTTP POST` request, you should send your `PRIVATE_KEY` using the `Phant-Private-Key` request header.
@@ -41,7 +41,7 @@ When making a `HTTP POST` request, you should send your `PRIVATE_KEY` using the 
 {% highlight bash %}
 curl -X POST 'http://data.sparkfun.com/input/PUBLIC_KEY' \
   -H 'Phant-Private-Key: PRIVATE_KEY' \
-  -d 'temp=91.4&=humidity=86%25'
+  -d 'temp=91.4&humidity=86%25'
 {% endhighlight %}
 
 ### Plain Text Response Examples
