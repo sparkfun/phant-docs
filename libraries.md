@@ -15,6 +15,7 @@ there is also a growing list of example code
 
 * [phant-arduino](https://github.com/sparkfun/phant-arduino) - Web client independent library for building
 Phant compatible HTTP requests.
+* [SparkFunDataClient](https://github.com/Serasidis/SparkfunDataClient) - Arduino example sketch that works on both W5100 ethernet module (stock ethernet library) and ENC28J60 ethernet module by using the UIPEthernet library
 
 ### Bro
 
