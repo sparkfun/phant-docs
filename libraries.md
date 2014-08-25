@@ -50,3 +50,7 @@ Phant compatible HTTP requests.
 ### Rust
 
 * [phant-rust](https://github.com/freiguy1/phant-rust)
+
+### Spark Core
+
+* [phant](https://github.com/romainmp/phant)
