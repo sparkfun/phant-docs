@@ -33,6 +33,10 @@ Phant compatible HTTP requests.
 
 * [JPhant](https://github.com/JPhant/JPhant_Java_Based_Phant_Library)
 
+### Node.js
+
+* [phant-client](https://www.npmjs.org/package/phant-client)
+
 ### PHP
 
 * [PHPePhant](https://github.com/hailspuds/PHPePhant)
