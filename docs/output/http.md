@@ -16,7 +16,7 @@ and we will try to make it available.
 
 ## Paging
 By default, [data.sparkfun.com](https://data.sparkfun.com) returns all of your logged data in the format you requested.
-If there is a need, you can also request output in 50 kilobyte chunks by setting the `page` parameter in the
+If there is a need, you can also request output in 250 kilobyte chunks by setting the `page` parameter in the
 [query string](http://en.wikipedia.org/wiki/Query_string) portion of the URL.  This can be very helpful if you just
 want to check out the latest logged data without requesting the entire data set.
 
@@ -51,6 +51,28 @@ humidity,temp,timestamp
 86%,91.4,2014-06-25T21:10:08.112Z
 86%,91.4,2014-06-25T20:40:56.425Z
 {% endhighlight %}
+
+## Filters
+Filters can be added to the output query string using the following format: `FILTER[FIELD]=VALUE`.
+
+* `FILTER` - the short name of the filter you would like to use. i.e. `gte`
+* `FIELD` - the name of one of the fields you defined (or the auto generated timestamp field). i.e. `temperature`
+* `VALUE` - the value used to compare against the values of the field you specified.  The value is used in different ways
+by each filter, so check the documentation for the filter you are using in order to find acceptable values.
+
+### Equal to value (eq)
+
+{% highlight text %}
+?eq[FIELD]=VALUE
+{% endhighlight %}
+
+The `VALUE` can be any string or number.  The comparison is not
+
+{% highlight text %}
+?eq[temp]=98.6
+{% endhighlight %}
+
+## Output Formats
 
 ### JSONP Output
 If you are using JavaScript in a web browser to retrieve data, then you might be interested in using the

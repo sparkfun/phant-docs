@@ -57,4 +57,5 @@ Phant compatible HTTP requests.
 
 ### Spark Core
 
+* [PietteTech_Phant](http://github.com/piettetech/PietteTech_Phant)
 * [phant](https://github.com/romainmp/phant)
