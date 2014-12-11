@@ -60,17 +60,139 @@ Filters can be added to the output query string using the following format: `FIL
 * `VALUE` - the value used to compare against the values of the field you specified.  The value is used in different ways
 by each filter, so check the documentation for the filter you are using in order to find acceptable values.
 
+### [Grep](http://en.wikipedia.org/wiki/Grep) for value (grep)
+
+```
+?grep[FIELD]=VALUE
+```
+
+The `VALUE` can be any valid Javascript regex pattern.
+
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?grep[humidity]=2952$
+```
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?grep[wood]=^bl
+```
+
 ### Equal to value (eq)
 
-{% highlight text %}
+```
 ?eq[FIELD]=VALUE
-{% endhighlight %}
+```
 
-The `VALUE` can be any string or number.  The comparison is not
+The `VALUE` can be any string or number. Numbers will be parsed as floats for comparison.
 
-{% highlight text %}
-?eq[temp]=98.6
-{% endhighlight %}
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?eq[temp]=98.6
+```
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?eq[name]=black%20walnut
+```
+
+### Not equal to value (ne)
+
+```
+?ne[FIELD]=VALUE
+```
+
+The `VALUE` can be any string or number. Numbers will be parsed as floats for comparison.
+
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?ne[temp]=98.6
+```
+
+### Greater than value (gt)
+
+```
+?gt[FIELD]=VALUE
+```
+
+The `VALUE` can be any number or in the case of the timestamp field,
+any [date.js](http://www.datejs.com/) compatible string. Numbers will be
+parsed as floats for comparison.
+
+Temp greater than 100:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?gt[temp]=100.0
+```
+
+Get the last day of logged values:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?gt[timestamp]=now%20-1day
+```
+
+### Less than value (lt)
+
+```
+?lt[FIELD]=VALUE
+```
+
+The `VALUE` can be any number or in the case of the timestamp field,
+any [date.js](http://www.datejs.com/) compatible string. Numbers will be
+parsed as floats for comparison.
+
+Temp less than 80:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lt[temp]=80.0
+```
+
+Get the logged values older than 11/30/2014:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lt[timestamp]=11-30-2014
+```
+
+### Greater than value (gte)
+
+```
+?gte[FIELD]=VALUE
+```
+
+The `VALUE` can be any number or in the case of the timestamp field,
+any [date.js](http://www.datejs.com/) compatible string. Numbers will be
+parsed as floats for comparison.
+
+Temp greater than or equal to 100:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?gte[temp]=100.0
+```
+
+Get the logged values from 11/30/2014 or newer:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?gte[timestamp]=12-02-2014
+```
+
+### Less than or equal to value (lte)
+
+```
+?lte[FIELD]=VALUE
+```
+
+The `VALUE` can be any number or in the case of the timestamp field,
+any [date.js](http://www.datejs.com/) compatible string. Numbers will be
+parsed as floats for comparison.
+
+Temp less than or equal to 80:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lte[temp]=80.0
+```
+
+Get the logged values from 11/30/2014 or older:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lte[timestamp]=11-30-2014
+```
+
+###Combining Filters
+
+You can combine as many filters as you would like using standard query string syntax.
+
+
+Get the logged values from 11/30/2014 or older with a temp greater than or equal to 100:
+```
+https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lte[timestamp]=11-30-2014&gte[temp]=100.0
+```
+
+
 
 ## Output Formats
 
