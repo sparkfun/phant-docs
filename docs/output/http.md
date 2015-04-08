@@ -142,7 +142,7 @@ Get the logged values older than 11/30/2014:
 https://data.sparkfun.com/output/xROQyrNEMoU6xQA2wro1?lt[timestamp]=11-30-2014
 ```
 
-### Greater than value (gte)
+### Greater than or equal to value (gte)
 
 ```
 ?gte[FIELD]=VALUE
